@@ -1,9 +1,6 @@
 import type { App, Directive, DirectiveBinding } from 'vue'
 
-/** 指令列表（可以将指令实现相关的，单独抽取到一个新目录中进行管理，这里只做一个示例）
- * 🔺为了在使用自定义指令可以有更好的提示，如果添加了新的自定义指令，请前往 types/custom-directives.d.ts 文件中声明自定义指令（可以有更好的代码提示） → Tip:移除自定义指令时，最好也将 types/custom-directives.d.ts 中的声明进行移除，避免代码混淆
- *      - 后续在考虑要不要写一个自动添加或移除自定义指令的声明工具（待定）
- */
+// -- 指令列表（可以将指令实现相关的，单独抽取到一个新目录中进行管理，这里只做一个示例）
 const directives: [key: string, Directive][] = [
     [
         'alert',
@@ -29,4 +26,9 @@ export const registerDirectives = (app: App) => {
     directives.forEach(([key, directive]) => {
         app.directive(key, directive)
     })
+}
+
+// -- 🔺Tip:为了在使用自定义指令可以有更好的提示，添加了新的自定义指令，请在此添加对应的类型声明，移除为避免混淆也需要在此移除掉类型声明（该 ICustomDirectives 类型声明，将会在 types/shims-vue.d.ts 中引入并声明为 Vue 自定义指令）
+export interface ICustomDirectives {
+    vAlert: Directive<HTMLElement, string> // -- Test: alert 弹窗指令（默认双击弹出对应内容的 alert 弹窗）→ Tip: 该指令仅为一个示例指令
 }
