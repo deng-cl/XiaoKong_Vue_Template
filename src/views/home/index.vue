@@ -4,7 +4,7 @@
 
 <template>
     <main>
-        <h1 v-alert="'Test v-alert custom directive'">Home</h1>
+        <h1 v-alert="'Test v-alert custom directive'" class="m-1 text-red">Home</h1>
         <hr>
         <TestGlobalComponent />
     </main>

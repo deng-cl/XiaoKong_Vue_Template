@@ -3,6 +3,7 @@ import App from './App.vue'
 import { createPinia } from 'pinia'
 import router from './router'
 import { registerDirectives, registerGlobalComponents } from './plugins'
+import 'virtual:uno.css'
 
 const app = createApp(App)
 
