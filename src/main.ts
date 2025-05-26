@@ -4,6 +4,7 @@ import { createPinia } from 'pinia'
 import router from './router'
 import { registerDirectives, registerGlobalComponents } from './plugins'
 import 'virtual:uno.css'
+import '@/styles/index.css'
 
 const app = createApp(App)
 
