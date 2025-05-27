@@ -82,11 +82,13 @@ export default defineConfig({
 
     theme: {
         colors: {
-            primary: '#00a8cf',
-            // bg_color: 'var(--el-bg-color)',
-            // primary: 'var(--el-color-primary)',
-            // text_color_primary: 'var(--el-text-color-primary)',
-            // text_color_regular: 'var(--el-text-color-regular)',
+            /** ElementPlus 主题色配置至 Unocss 主题中 */
+            primary: 'var(--el-color-primary)',
+            success: 'var(--el-color-success)',
+            warning: 'var(--el-color-warning)',
+            danger: 'var(--el-color-danger)',
+            error: 'var(--el-color-error)',
+            info: 'var(--el-color-info)',
         },
     },
 })

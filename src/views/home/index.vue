@@ -12,7 +12,8 @@ console.log(__APP_INFO__);
 
 <template>
     <main>
-        <h1 v-alert="'Test v-alert custom directive'" class="text-red font-sans m-2 flex-c" text="blue">Home</h1>
+        <h1 v-alert="'Test v-alert custom directive'" class="text-red font-sans m-2 flex-c text-primary" text="blue">
+            Home</h1>
         <hr>
         <TestGlobalComponent />
         <p>sv: {{ appStore.sv }}</p>
