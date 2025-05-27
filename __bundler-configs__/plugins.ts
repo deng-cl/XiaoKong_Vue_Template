@@ -11,7 +11,10 @@ export const getVitePluginsConfig = (VITE_COMPRESSION: ViteCompress) => {
     /** ... */
     return [
         vue(),
-        vueJsx(),
+        vueJsx({
+            // transformOn: true,
+            // mergeProps: true,
+        }),
         vueDevTools(),
         UnoCSS(),
 

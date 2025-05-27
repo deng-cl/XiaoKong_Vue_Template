@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import TestTsxComponent from '@/components/global/TestTsxComponent';
 import { useAppStore } from '@/stores';
+import { ref } from 'vue';
 
 const appStore = useAppStore()
 
 console.log(__APP_INFO__);
-
 
 // setTimeout(() => appStore.upSv('1.0.0.1'), 1000)
 </script>
@@ -16,6 +17,8 @@ console.log(__APP_INFO__);
         <TestGlobalComponent />
         <p>sv: {{ appStore.sv }}</p>
         <p>testName: {{ appStore.testName }}</p>
+        <TestTsxComponent name="H" age="18" @TestEmit="() => { console.log('TestEmit') }" />
+        <hr>
     </main>
 </template>
 

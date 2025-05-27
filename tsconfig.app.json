@@ -6,6 +6,7 @@
         "src/**/*.vue",
         "types/*.d.ts",
         "src/**/*.md",
+        "src/**/*.tsx",
         "__bundler-configs__/**/*"
     ],
     "exclude": ["src/**/__tests__/*", "dist", "**/*.js", "node_modules"],
@@ -15,7 +16,6 @@
         "module": "ESNext",
         "moduleResolution": "bundler",
         "strict": false,
-        "jsx": "preserve",
         "importHelpers": true,
         "experimentalDecorators": true,
         "strictFunctionTypes": false,
@@ -27,6 +27,9 @@
         "sourceMap": true,
         "allowJs": false,
         "resolveJsonModule": true,
+        "jsx": "preserve",
+        "jsxFactory": "h",
+        "jsxFragmentFactory": "Fragment",
         "lib": ["ESNext", "DOM"],
         "baseUrl": ".",
         "paths": {

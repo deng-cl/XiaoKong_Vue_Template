@@ -1,3 +1,5 @@
+import { type VNode } from 'vue'
+
 declare global {
     /**
      * 全局自定义环境变量的类型声明
@@ -38,6 +40,16 @@ declare global {
         | 'brotli-clear'
         | 'gzip-clear'
         | 'both-clear'
+
+    namespace JSX {
+        interface Element extends VNode {}
+        interface ElementClass {
+            $props: {}
+        }
+        interface IntrinsicElements {
+            [elem: string]: any
+        }
+    }
 }
 
 export {} // -- 使其文件可以让 TS 识别为一个模块，可以正常识别该文件
