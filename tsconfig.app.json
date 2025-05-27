@@ -36,6 +36,7 @@
             "@/*": ["src/*"],
             "@build/*": ["__bundler-configs__/*"]
         },
-        "noImplicitAny": false
+        "noImplicitAny": false,
+        "types": ["element-plus/global"]
     }
 }

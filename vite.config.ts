@@ -32,6 +32,14 @@ export default defineConfig(async ({ command, mode }) => {
 
         assetsInclude: ['**/*.md'],
 
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    additionalData: `@use "@/styles/modules/element.scss" as *;`, // -- ElementPlus 按需导入时自定义主题
+                },
+            },
+        },
+
         // -- server config
         server: {
             host: '0.0.0.0',
@@ -73,3 +81,8 @@ export default defineConfig(async ({ command, mode }) => {
 function resolvePathInCurrentFilePosition(path: string) {
     return fileURLToPath(new URL(path, import.meta.url))
 }
+
+/** 自动导入插件，后续可了解一下怎么实现的
+ * unplugin-vue-components
+ * unplugin-auto-import
+ */

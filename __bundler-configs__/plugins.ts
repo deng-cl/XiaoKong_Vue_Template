@@ -6,6 +6,9 @@ import { codeInspectorPlugin } from 'code-inspector-plugin'
 import { viteBundlerInfoPlugin } from './bundler-info-plugin'
 import removeConsole from 'vite-plugin-remove-console'
 import { viteCompression } from './bundler-compression-plugins'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 export const getVitePluginsConfig = (VITE_COMPRESSION: ViteCompress) => {
     /** ... */
@@ -47,5 +50,21 @@ export const getVitePluginsConfig = (VITE_COMPRESSION: ViteCompress) => {
         /**
          * 配置包不进行打包，采用 cdn 方式引入（后续想要使用 cdn 方式，再进行配置）: vite-plugin-cdn-import
          */
+
+        /**
+         * Element Plus 自动导入
+         */
+        AutoImport({
+            resolvers: [ElementPlusResolver()],
+            dts: 'types/auto-imports.d.ts', // -- dts:声明文件存放位置
+        }),
+        Components({
+            resolvers: [
+                ElementPlusResolver({
+                    importStyle: 'sass', // -- 动态导入 sass 样式: https://element-plus.org/zh-CN/guide/theming.html
+                }),
+            ],
+            dts: 'types/components.d.ts',
+        }),
     ]
 }

@@ -2,9 +2,9 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import { registerDirectives, registerGlobalComponents } from './plugins'
+import { registerPinia } from './stores'
 import 'virtual:uno.css'
 import '@/styles/index.css'
-import { registerPinia } from './stores'
 
 const app = createApp(App)
 

@@ -1,0 +1,53 @@
+/** ElementPlus 主题颜色覆盖
+    - 🔺Tip: 在 element-plus scss 文件之前导入element/index.scss以避免 sass 混合变量的问题，因为我们需要通过你的自定义变量生成 light-x
+ */
+/** vite.config.ts 中导入该文件，按需导入自定义主题: https://element-plus.org/zh-CN/guide/theming.html */
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+    $colors: (
+        'white': #ffffff,
+        'black': #000000,
+        'primary': (
+            'base': #409eff,
+        ),
+        'success': (
+            'base': #67c23a,
+        ),
+        'warning': (
+            'base': #e6a23c,
+        ),
+        'danger': (
+            'base': #f56c6c,
+        ),
+        'error': (
+            'base': #f56c6c,
+        ),
+        'info': (
+            'base': #909399,
+        ),
+    )
+);
+
+/** ElementPlus 默认主题颜色
+    $colors: (
+        'white': #ffffff,
+        'black': #000000,
+        'primary': (
+            'base': #409eff,
+        ),
+        'success': (
+            'base': #67c23a,
+        ),
+        'warning': (
+            'base': #e6a23c,
+        ),
+        'danger': (
+            'base': #f56c6c,
+        ),
+        'error': (
+            'base': #f56c6c,
+        ),
+        'info': (
+            'base': #909399,
+        ),
+    )
+ */
