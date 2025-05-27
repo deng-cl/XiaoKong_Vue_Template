@@ -3,6 +3,9 @@ import { useAppStore } from '@/stores';
 
 const appStore = useAppStore()
 
+console.log(__APP_INFO__);
+
+
 // setTimeout(() => appStore.upSv('1.0.0.1'), 1000)
 </script>
 

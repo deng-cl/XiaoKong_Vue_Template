@@ -1,7 +1,5 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import { createPinia } from 'pinia'
-import piniaPluginPersistedstate, { createPersistedState } from 'pinia-plugin-persistedstate'
 import router from './router'
 import { registerDirectives, registerGlobalComponents } from './plugins'
 import 'virtual:uno.css'

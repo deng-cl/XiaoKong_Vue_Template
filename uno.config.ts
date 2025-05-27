@@ -83,7 +83,6 @@ export default defineConfig({
     theme: {
         colors: {
             primary: '#00a8cf',
-
             // bg_color: 'var(--el-bg-color)',
             // primary: 'var(--el-color-primary)',
             // text_color_primary: 'var(--el-text-color-primary)',
