@@ -9,6 +9,7 @@ declare global {
         readonly VITE_PUBLIC_PATH: any
         readonly VITE_APP_API: any
         readonly VITE_COMPRESSION: ViteCompress
+        readonly VITE_AUTO_IMPORT_COMPONENTS_DIR: string
     }
 
     /**

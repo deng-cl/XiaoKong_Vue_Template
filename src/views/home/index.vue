@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import TestTsxComponent from '@/components/global/TestTsxComponent';
 import { useAppStore } from '@/stores';
-import { ref } from 'vue';
 
 const appStore = useAppStore()
 
 console.log(__APP_INFO__);
+
 
 // setTimeout(() => appStore.upSv('1.0.0.1'), 1000)
 </script>
@@ -29,7 +29,6 @@ console.log(__APP_INFO__);
             <el-button type="warning">Warning</el-button>
             <el-button type="danger">Danger</el-button>
         </div>
-
     </main>
 </template>
 

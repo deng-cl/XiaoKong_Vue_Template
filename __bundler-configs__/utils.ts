@@ -12,6 +12,7 @@ export const wrapperEnv = (rawEnv: Record<string, any>): Partial<ImportMetaEnv> 
         VITE_PUBLIC_PATH: '',
         VITE_APP_API: '',
         VITE_COMPRESSION: 'none',
+        VITE_AUTO_IMPORT_COMPONENTS_DIR: 'none',
     }
 
     for (const eName of Object.keys(rawEnv)) {

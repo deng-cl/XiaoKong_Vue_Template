@@ -5,9 +5,12 @@ import { getVitePluginsConfig } from './__bundler-configs__/plugins'
 
 // https://vite.dev/config/
 export default defineConfig(async ({ command, mode }) => {
-    const { VITE_PORT, VITE_PUBLIC_PATH, VITE_COMPRESSION } = wrapperEnv(
-        loadEnv(mode, process.cwd()),
-    ) // -- 根据当前工作目录中的 `mode` 加载 .env 文件。设置第三个参数为 '' 来加载所有环境变量，而不管是否有 `VITE_` 前缀
+    const {
+        VITE_PORT,
+        VITE_PUBLIC_PATH,
+        VITE_COMPRESSION = 'none',
+        VITE_AUTO_IMPORT_COMPONENTS_DIR,
+    } = wrapperEnv(loadEnv(mode, process.cwd())) // -- 根据当前工作目录中的 `mode` 加载 .env 文件。设置第三个参数为 '' 来加载所有环境变量，而不管是否有 `VITE_` 前缀
 
     return {
         // -- common config
@@ -21,7 +24,7 @@ export default defineConfig(async ({ command, mode }) => {
 
         publicDir: './public',
 
-        plugins: getVitePluginsConfig(VITE_COMPRESSION ?? 'none'),
+        plugins: getVitePluginsConfig(VITE_COMPRESSION, VITE_AUTO_IMPORT_COMPONENTS_DIR),
 
         resolve: {
             alias: {

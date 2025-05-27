@@ -10,7 +10,10 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
-export const getVitePluginsConfig = (VITE_COMPRESSION: ViteCompress) => {
+export const getVitePluginsConfig = (
+    VITE_COMPRESSION: ViteCompress,
+    VITE_AUTO_IMPORT_COMPONENTS_DIR: string,
+) => {
     /** ... */
     return [
         vue(),
@@ -56,7 +59,8 @@ export const getVitePluginsConfig = (VITE_COMPRESSION: ViteCompress) => {
          */
         AutoImport({
             resolvers: [ElementPlusResolver()],
-            dts: 'types/auto-imports.d.ts', // -- dts:声明文件存放位置
+            imports: ['vue'], // -- 配置自动导入包
+            dts: 'types/auto-imports.d.ts', // -- dts:自动导入类型声明文件
         }),
         Components({
             resolvers: [
@@ -64,6 +68,7 @@ export const getVitePluginsConfig = (VITE_COMPRESSION: ViteCompress) => {
                     importStyle: 'sass', // -- 动态导入 sass 样式: https://element-plus.org/zh-CN/guide/theming.html
                 }),
             ],
+            dirs: [VITE_AUTO_IMPORT_COMPONENTS_DIR],
             dts: 'types/components.d.ts',
         }),
     ]
