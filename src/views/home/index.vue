@@ -21,11 +21,10 @@ const { t } = useI18n()
 <template>
     <main>
         <h1 v-alert="'Test v-alert custom directive'" class="text-red font-sans m-2 flex-c text-primary" text="blue">
-            Home - {{ t('home.welcome') }}</h1>
+            Home - {{ t('home.welcome') }} {{ t('name') }}
+        </h1>
         <hr>
         <TestGlobalComponent />
-        <p>sv: {{ appStore.sv }}</p>
-        <p>testName: {{ appStore.testName }}</p>
         <TestTsxComponent name="H" age="18" @TestEmit="() => { console.log('TestEmit') }" />
         <hr>
         <!-- Element Plus -->
