@@ -59,7 +59,7 @@ export const getVitePluginsConfig = (
          */
         AutoImport({
             resolvers: [ElementPlusResolver()],
-            imports: ['vue'], // -- 配置自动导入包
+            imports: ['vue', '@vueuse/core'], // -- 配置自动导入包
             dts: 'types/auto-imports.d.ts', // -- dts:自动导入类型声明文件
         }),
         Components({

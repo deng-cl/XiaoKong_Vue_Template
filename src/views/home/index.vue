@@ -7,7 +7,6 @@ import { aesDecrypt, aesEncrypt } from '@/utils/encrypt/aes';
 import { rsaDecrypt, rsaEncrypt } from '@/utils/encrypt/ras';
 import { storage } from '@/utils/storager';
 
-
 const appStore = useAppStore()
 
 console.log(__APP_INFO__);
@@ -15,7 +14,6 @@ console.log(__APP_INFO__);
 const { t } = useI18n()
 
 // setTimeout(() => appStore.upSv('1.0.0.1'), 1000)
-
 </script>
 
 <template>
@@ -36,6 +34,7 @@ const { t } = useI18n()
             <el-button type="warning">Warning</el-button>
             <el-button type="danger">Danger</el-button>
         </div>
+
         <!--  -->
         <hr>
         <h1>Test Storage</h1>
