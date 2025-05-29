@@ -5,6 +5,7 @@ import { useI18n } from 'vue-i18n';
 import { storage } from '@/utils/storager';
 import http from '@/utils/http';
 import { queryUserList } from '@/api/modules/user';
+import NProgress from '@/utils/nprogress';
 
 const appStore = useAppStore()
 
@@ -20,6 +21,12 @@ onMounted(() => {
     }).then(res => {
         console.log('QueryUserList Mock:', res);
     })
+
+    NProgress.start()
+
+    setTimeout(() => {
+        NProgress.done()
+    }, 2000)
 })
 // setTimeout(() => appStore.upSv('1.0.0.1'), 1000)
 </script>

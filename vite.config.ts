@@ -38,7 +38,7 @@ export default defineConfig(async ({ command, mode }) => {
         css: {
             preprocessorOptions: {
                 scss: {
-                    additionalData: `@use "@/styles/modules/element.scss" as *;`, // -- ElementPlus 按需导入时自定义主题
+                    additionalData: `@use "@/styles/modules/ep-theme-color.scss" as *;`, // -- ElementPlus 按需导入时自定义主题
                 },
             },
         },
