@@ -6,7 +6,7 @@ import { storage } from '@/utils/storager'
 export type LocalType = 'en' | 'zh'
 export const LOCALE_STORAGE_KEY = 'locale'
 
-const langsConfig = {
+export const langsConfig = {
     en: { ...epEn, ...en },
     zh: { ...epZh, ...zh },
 }

@@ -16,6 +16,7 @@
     "dependencies": {
         "@vueuse/components": "^13.3.0",
         "@vueuse/core": "^13.3.0",
+        "axios": "^1.9.0",
         "boxen": "^8.0.1",
         "crypto-js": "^4.2.0",
         "dayjs": "^1.11.13",
