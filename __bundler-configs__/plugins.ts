@@ -9,11 +9,9 @@ import { viteCompression } from './bundler-compression-plugins'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { vitePluginFakeServer } from 'vite-plugin-fake-server'
 
-export const getVitePluginsConfig = (
-    VITE_COMPRESSION: ViteCompress,
-    VITE_AUTO_IMPORT_COMPONENTS_DIR: string,
-) => {
+export const getVitePluginsConfig = (VITE_COMPRESSION: ViteCompress, VITE_AUTO_IMPORT_COMPONENTS_DIR: string) => {
     /** ... */
     return [
         vue(),
@@ -70,6 +68,17 @@ export const getVitePluginsConfig = (
             ],
             dirs: [VITE_AUTO_IMPORT_COMPONENTS_DIR],
             dts: 'types/components.d.ts',
+        }),
+
+        /**
+         * Mock 支持
+         */
+        vitePluginFakeServer({
+            logger: true,
+            include: 'mock',
+            infixName: false,
+            enableProd: true,
+            watch: true,
         }),
     ]
 }

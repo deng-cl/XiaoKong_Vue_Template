@@ -100,24 +100,37 @@ interface HFetchList {
     key: string
     url: string
     method: RequestMethodType
-    data?: any
-    params?: any
-    config?: Omit<HRequestConfig, 'url' | 'method' | 'data' | 'config'>
 }
+
+type FetchGenFunctionType = (
+    data?: any,
+    config?: Omit<HRequestConfig, 'url' | 'method' | 'data' | 'params'>,
+) => Promise<any>
 
 /**
  * 批量生成请求方法工具函数
  * @param http
  * @param fetchList
  * @useExample const { fetchExample1, fetchExample2 } = fetchFunctionBatchGenerator(http, [{ key:'fetchExample1', method: 'GET', url: '...', ... }, { key:'fetchExample2', method: 'GET', url: '...', ... }])
+ * @returns FetchGenFunctionType[]
  */
 export const fetchFunctionBatchGenerator = (http: HRequest, fetchList: HFetchList[]) => {
     const fetchFunctions = {}
-    fetchList.forEach(({ key, config = {}, ...fetchInfo }) => {
-        fetchFunctions[key] = async () => {
-            return http.request({ ...fetchInfo, ...config })
+
+    fetchList.forEach(({ key, url, method }) => {
+        fetchFunctions[key] = async (
+            data?: any,
+            config: Omit<HRequestConfig, 'url' | 'method' | 'data' | 'params'> = {},
+        ) => {
+            const fetchConfig = { url, method, ...config } as HRequestConfig
+
+            // -- 请求参数处理
+            fetchConfig[method == 'GET' ? 'params' : 'data'] = data
+
+            return http.request(fetchConfig)
         }
     })
+    return fetchFunctions as Record<(typeof fetchList)[number]['key'], FetchGenFunctionType>
 }
 
 export default HRequest

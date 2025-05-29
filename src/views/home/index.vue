@@ -2,10 +2,9 @@
 import TestTsxComponent from '@/components/global/TestTsxComponent';
 import { useAppStore } from '@/stores';
 import { useI18n } from 'vue-i18n';
-import CryptoJS from 'crypto-js'
-import { aesDecrypt, aesEncrypt } from '@/utils/encrypt/aes';
-import { rsaDecrypt, rsaEncrypt } from '@/utils/encrypt/ras';
 import { storage } from '@/utils/storager';
+import http from '@/utils/http';
+import { queryUserList } from '@/api/modules/user';
 
 const appStore = useAppStore()
 
@@ -13,6 +12,15 @@ console.log(__APP_INFO__);
 
 const { t } = useI18n()
 
+onMounted(() => {
+    queryUserList({ name: 'H' }, {
+        headers: {
+            "token": 'token'
+        }
+    }).then(res => {
+        console.log('QueryUserList Mock:', res);
+    })
+})
 // setTimeout(() => appStore.upSv('1.0.0.1'), 1000)
 </script>
 

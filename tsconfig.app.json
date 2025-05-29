@@ -7,7 +7,8 @@
         "types/*.d.ts",
         "src/**/*.md",
         "src/**/*.tsx",
-        "__bundler-configs__/**/*"
+        "__bundler-configs__/**/*",
+        "mock/*.ts*"
     ],
     "exclude": ["src/**/__tests__/*", "dist", "**/*.js", "node_modules"],
     "compilerOptions": {
