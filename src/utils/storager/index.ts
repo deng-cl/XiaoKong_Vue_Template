@@ -1,6 +1,6 @@
-import { HStorage } from './localeStoreageImp'
+import { HStorage } from "xk-storage";
 
 export const storage = new HStorage({
-    namespace: 'Hpbs-',
+    namespace: '',
     encrypt: false,
 })

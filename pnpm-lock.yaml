@@ -65,6 +65,9 @@ importers:
       vue-router:
         specifier: ^4.5.0
         version: 4.5.1(vue@3.5.14(typescript@5.8.3))
+      xk-storage:
+        specifier: ^0.0.1
+        version: 0.0.1
     devDependencies:
       '@tsconfig/node22':
         specifier: ^22.0.1
@@ -1617,6 +1620,9 @@ packages:
   jsencrypt@3.3.2:
     resolution: {integrity: sha512-arQR1R1ESGdAxY7ZheWr12wCaF2yF47v5qpB76TtV64H1pyGudk9Hvw8Y9tb/FiTIaaTRUyaSnm5T/Y53Ghm/A==}
 
+  jsencrypt@3.5.4:
+    resolution: {integrity: sha512-kNjfYEMNASxrDGsmcSQh/rUTmcoRfSUkxnAz+MMywM8jtGu+fFEZ3nJjHM58zscVnwR0fYmG9sGkTDjqUdpiwA==}
+
   jsesc@3.1.0:
     resolution: {integrity: sha512-/sM3dO2FOzXjKQhJuo0Q173wf2KOo8t4I8vHy6lF9poUp7bKT0/NHE8fPX23PwfhnykfqnC2xRxOnVw5XuGIaA==}
     engines: {node: '>=6'}
@@ -2273,6 +2279,9 @@ packages:
   wrap-ansi@9.0.0:
     resolution: {integrity: sha512-G8ura3S+3Z2G+mkgNRq8dqaFZAuxfsxpBB8OCTGRTCtp+l/v9nbFNmCUP1BZMts3G1142MsZfn6eeUKrr4PD1Q==}
     engines: {node: '>=18'}
+
+  xk-storage@0.0.1:
+    resolution: {integrity: sha512-75zyMSsA5VxQxRZXjNy9+BzTf7DuF4v80GnoFCLmq7C1iZYgy4mCWQJbsAbsCR518OZyh71dVpnNebDwQT00sw==}
 
   yallist@3.1.1:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}
@@ -3792,6 +3801,8 @@ snapshots:
 
   jsencrypt@3.3.2: {}
 
+  jsencrypt@3.5.4: {}
+
   jsesc@3.1.0: {}
 
   json-parse-even-better-errors@4.0.0: {}
@@ -4494,6 +4505,10 @@ snapshots:
       ansi-styles: 6.2.1
       string-width: 7.2.0
       strip-ansi: 7.1.0
+
+  xk-storage@0.0.1:
+    dependencies:
+      jsencrypt: 3.5.4
 
   yallist@3.1.1: {}
 
