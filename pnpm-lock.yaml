@@ -65,6 +65,9 @@ importers:
       vue-router:
         specifier: ^4.5.0
         version: 4.5.1(vue@3.5.14(typescript@5.8.3))
+      xk-request:
+        specifier: ^0.0.2
+        version: 0.0.2(axios@1.9.0)
       xk-storage:
         specifier: ^0.0.1
         version: 0.0.1
@@ -2279,6 +2282,11 @@ packages:
   wrap-ansi@9.0.0:
     resolution: {integrity: sha512-G8ura3S+3Z2G+mkgNRq8dqaFZAuxfsxpBB8OCTGRTCtp+l/v9nbFNmCUP1BZMts3G1142MsZfn6eeUKrr4PD1Q==}
     engines: {node: '>=18'}
+
+  xk-request@0.0.2:
+    resolution: {integrity: sha512-X7fJvRDQ9LBQKqNjWPaRxxtpcZ5zPbXH88guHdVnWIgrocI7gicUdngant5BcFUEDAN7YB3sCNf7CEnCYXGgWA==}
+    peerDependencies:
+      axios: ^1.10.0
 
   xk-storage@0.0.1:
     resolution: {integrity: sha512-75zyMSsA5VxQxRZXjNy9+BzTf7DuF4v80GnoFCLmq7C1iZYgy4mCWQJbsAbsCR518OZyh71dVpnNebDwQT00sw==}
@@ -4505,6 +4513,10 @@ snapshots:
       ansi-styles: 6.2.1
       string-width: 7.2.0
       strip-ansi: 7.1.0
+
+  xk-request@0.0.2(axios@1.9.0):
+    dependencies:
+      axios: 1.9.0
 
   xk-storage@0.0.1:
     dependencies:

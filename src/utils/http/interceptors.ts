@@ -1,5 +1,5 @@
 /** HRequest 实例拦截器处理（内部处理可根据项目需求进行修改） */
-import type { HInternalAxiosRequestConfig, HInternalAxiosResponseConfig } from './baseImple'
+import type { HInternalAxiosRequestConfig, HInternalAxiosResponseConfig } from "xk-request"
 
 /** 请求拦截器 */
 export function requestInterceptorHandle(config: HInternalAxiosRequestConfig): HInternalAxiosRequestConfig {

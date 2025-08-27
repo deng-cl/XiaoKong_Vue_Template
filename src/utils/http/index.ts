@@ -1,4 +1,4 @@
-import HRequest, { fetchFunctionBatchGenerator } from './baseImple'
+import { fetchFunctionBatchGeneratorCurry, HRequest } from 'xk-request'
 import { requestInterceptorHandle, responseInterceptorHandle } from './interceptors'
 
 const http = new HRequest({
@@ -16,4 +16,6 @@ const http = new HRequest({
     },
 })
 
-export default http
+const fetchFunctionBatchGenerator = fetchFunctionBatchGeneratorCurry(http);
+
+export {http, fetchFunctionBatchGenerator};
